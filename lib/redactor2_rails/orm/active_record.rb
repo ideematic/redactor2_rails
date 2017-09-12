@@ -15,7 +15,7 @@ module Redactor2Rails
               self.table_name = 'redactor2_assets'
 
               belongs_to :assetable, :polymorphic => true
-              belongs_to Redactor2Rails.devise_user, :foreign_key => Redactor2Rails.devise_user_key
+              belongs_to Redactor2Rails.devise_user, :foreign_key => Redactor2Rails.devise_user_key, optional: true
 
               if defined?(ActiveModel::ForbiddenAttributesProtection) && base.ancestors.include?(ActiveModel::ForbiddenAttributesProtection)
                 # Ok
